@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Mejor Amiga</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001f3f, #001229);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            max-width: 600px;
+            margin-top: 100px;
+            position: relative;
+            z-index: 1;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #888;
+        }
+        .moon {
+            position: absolute;
+            top: 50px;
+            left: -100px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #fff, #f0e4d7, #ccc);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: moveMoon 10s linear infinite;
+            z-index: 1;
+        }
+        .crater {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+        }
+        .crater1 { width: 15px; height: 15px; top: 20px; left: 25px; }
+        .crater2 { width: 10px; height: 10px; top: 50px; left: 60px; }
+        .crater3 { width: 20px; height: 20px; top: 70px; left: 30px; }
+        @keyframes moveMoon {
+            0% {
+                transform: translateX(-200px);
+            }
+            100% {
+                transform: translateX(120vw);
+            }
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 0;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="moon">
+        <div class="crater crater1"></div>
+        <div class="crater crater2"></div>
+        <div class="crater crater3"></div>
+    </div>
+    <div class="container">
+        <h1>Para Mi Mejor Amiga</h1>
+        <p>Fernanda</p>
+        <p>Quiero que sepas que te quiero mucho y que siempre serás mi amiga. Hemos compartido tantos momentos juntos, risas, lágrimas y aventuras. Gracias por estar siempre a mi lado y por ser esa persona en la que puedo confiar incondicionalmente.</p>
+        <p>Siempre tendrás un lugar especial en mi corazón.</p>
+        <p>Con mucho cariño,</p>
+        <p>[Tu bets friend]</p>
+    </div>
+    <div class="footer">
+        <p>Hecho con ❤️ por Ander</p>
+    </div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
